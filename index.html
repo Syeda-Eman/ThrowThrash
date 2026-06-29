@@ -1,36 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Garbage Sorting Game</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Throw trash</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
     <div class="game-container">
-        <h2>Garbage Sorting Game</h2>
+        <h2>Throw trash</h2>
         <div class="score-board">Score: <span id="score">0</span></div>
 
-        <!-- Spawn zone for garbage items -->
-        <div class="garbage-zone" id="garbageZone">
-            <!-- Items will be generated here by JavaScript -->
-        </div>
+        <div class="garbage-zone" id="garbageZone"
 
-        <!-- Fixed Dustbins at the bottom -->
-        <div class="bin-zone">
-            <div class="bin" data-type="organic" id="organicBin">
-                <img src="organic.png" alt="Organic Bin">
-            </div>
-            <div class="bin" data-type="paper" id="paperBin">
-                <img src="paperdustbin.png" alt="Paper Bin">
-            </div>
-            <div class="bin" data-type="plastic" id="plasticBin">
-                <img src="plastic.png" alt="Plastic Bin">
-            </div>
-        </div>
     </div>
 
-    <script src="script.js"></script>
+    <div class="bin-zone">
+        <div class="bin" data-type="organic" id="organicBin">
+            <img src="organic.png" alt="Organic Bin">
+        </div>
+        <div class="bin" data-type="paper" id="paperBin">
+            <img src="paperdustbin.png" alt="Paper Bin">
+        </div>
+        <div class="bin" data-type="plastic" id="plasticBin">
+            <img src="plastic.png" alt="Plastic Bin">
+        </div>
+    </div> 
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
