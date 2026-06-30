@@ -1,16 +1,16 @@
-const garbageItems=[
-    {src:'apple.png', name:'Apple', type:'Organic'},
-    {src:'fish.png', name:'Fish', type:'Organic'},
-    {src:'orange.png', name:'Orange', type:'Organic'},
-    {src:'bottle.png', name:'Bottle', type:'Plastic'},
-    {src:'red.png', name:'Red Can', type:'Plastic'},
-    {src:'blue.png', name:'Blue Can', type:'Plastic'},
-    {src:'green.png', name:'Green Can', type:'Plastic'},
-    {src:'black.png', name:'Black Can', type:'Plastic'},
-    {src:'paper.png', name:'Paper', type:'Paper'},
-    {src:'newspaper.png', name:'Newspaper', type:'Paper'},
-    {src:'scramblepaper.png', name:'Scrambled Paper', type:'Paper'},
-    {src:'book.png', name:'Book', type:'Paper'},
+const garbageItems = [
+    { src: 'imgs/apple.png', type: 'organic' },
+    { src: 'imgs/fish.png', type: 'organic' },
+    { src: 'imgs/orange.png', type: 'organic' },
+    { src: 'imgs/book.png', type: 'paper' },
+    { src: 'imgs/newspaper.png', type: 'paper' },
+    { src: 'imgs/paper.png', type: 'paper' },
+    { src: 'imgs/scramblepaper.png', type: 'paper' },
+    { src: 'imgs/bottle.png', type: 'plastic' },
+    { src: 'imgs/red.png', type: 'plastic' },
+    { src: 'imgs/blue.png', type: 'plastic' },
+    { src: 'imgs/green.png', type: 'plastic' },
+    { src: 'imgs/black.png', type: 'plastic' }
 ];
 let score = 0;
 const scoreDisplay=document.getElementById('score');
@@ -20,7 +20,7 @@ const bins = document.querySelectorAll('.bin');
 function initGame() {
     garbageZone.innerHTML = '';
 
-    const shuffledItems = [...garbageItems].sort(() => Math.random() - 0.5);
+    const shuffledItems = [...garbageItems].sort(() => 0.5 - Math.random());
     shuffledItems.slice(0, 4).forEach((item, index) => {
         const img = document.createElement('img');
         img.src = item.src;
@@ -37,7 +37,7 @@ function initGame() {
 bins.forEach(bin => {
     bin.addEventListener('dragover', (e) => {
         e.preventDefault();
-        bin.classList.remove('hovered')
+        bin.classList.add('hovered');
     });
     bin.addEventListener('dragleave', () => {
         bin.classList.remove('hovered');
@@ -51,10 +51,10 @@ bins.forEach(bin => {
         const itemType = draggedItem.dataset.type;
         const binType = bin.dataset.type;
         if (itemType === binType) {
-            score+=1;
+            score += 1;
             draggedItem.remove();
         } else {
-            score-=1;
+            score -= 1;
         }
         scoreDisplay.textContent = score;
         if (garbageZone.children.length === 0) {
@@ -62,4 +62,5 @@ bins.forEach(bin => {
         }
     });
 });
-initGame();      
+
+initGame();     
